@@ -22,7 +22,7 @@ try:
         access_token_secret = 'LrZiv6h8lyRU0L8vfHbFQKVUTmZr4jACpzU9ReAYKkG9B'
      )
      
-     #testest
+     
 
      # this is where the fun actually starts :)
     for tweet in ts.search_tweets_iterable(tso):
