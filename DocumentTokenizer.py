@@ -6,14 +6,16 @@ Created on Wed Oct 21 16:41:03 2015
 """
 
 import nltk
+import sys
 
-def tokenizeTextData():
+def tokenizeTextDataDoc1():
     file_content = open("doc1.txt").read()
     tokens = nltk.word_tokenize(file_content)
     print(tokens)
     print('Writing a new text file\n')
     #Name of text file coerced with .txt
     textFileName = 'vocab.txt'
+    
     
     try:
         #Trying to create a new file or open one
@@ -24,6 +26,5 @@ def tokenizeTextData():
     except:
         print('Something went wrong while writing to the file!')
         #quit python
-        sys.exit(0)
-        
-tokenizeTextData()
+        sys.exit(0)  
+tokenizeTextDataDoc1()
