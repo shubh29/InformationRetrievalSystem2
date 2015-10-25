@@ -11,3 +11,6 @@ period of time even if there is a single broken window. The same thing happens w
 the time code tends to become more chaotic, atleast for our little pair programming exercises 
 we should not have any broken code on github. Simple rule: Only push code without any errros, 
 any warnings on the github repository.
+
+Gitter chat window:
+https://gitter.im/shubh29/InformationRetrievalSystem2
