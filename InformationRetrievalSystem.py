@@ -1,10 +1,14 @@
 '''
-Max
-Shubham
+Created on Sun Oct 25 12:41:47 2015
+
+@authors: 
+            Max Levine
+            Shubham Mahajan
 '''
 ################################## Sources ####################################
-#https://github.com/shubh29/Postinglist/blob/master/PostingList.py
-#http://www.nltk.org/book/ch02.html
+# https://github.com/shubh29/Postinglist/blob/master/PostingList.py
+# http://www.nltk.org/book/ch02.html
+# https://docs.python.org/3/library/collections.html
 
 ################################## Imports ####################################
 
@@ -13,14 +17,10 @@ import os
 import math
 import re
 import operator
-from collections import OrderedDict
+from collections import *
 
-# Get stop words
-stopwords = nltk.corpus.stopwords.words('english')
 
-    
 ################################## Storage ####################################
-
 
 documentTerms = {}
 
@@ -33,6 +33,10 @@ postingsList = {}
 
 ################################## Methods ####################################
 
+# Get stop words
+stopwords = nltk.corpus.stopwords.words('english')
+
+# Read the documents from the directory and collect vocabulary
 def collectVocab():
     for file in os.listdir(os.getcwd()):
          if file.endswith(".txt"):
@@ -46,7 +50,6 @@ collectVocab()
 # Get query and break it into terms
 inputQuery = input('Please enter the Query: ')
 queryTerms = set([w.lower() for w in nltk.word_tokenize(inputQuery)])
-
 
 def postingListOperation():
     for term in queryTerms:
@@ -63,12 +66,10 @@ for term in queryTerms:
 		if count > 0:
 			postingsList[term][doc] = count
 
-
-# Init scores list
 for l in length:
 	scores[l] = 0
 
-# For each term/doc, add td-idf to doc score
+# For the terms present in document (if any), generate a score for that document
 def computeTermFrequency():
     for term in postingsList:
         if len(postingsList[term]) != 0:
