@@ -1,6 +1,10 @@
 # InformationRetrievalSystem2
 
 [![Join the chat at https://gitter.im/shubh29/InformationRetrievalSystem2](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/shubh29/InformationRetrievalSystem2?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+
+
+
 Python pair programming exercise
 
 For this pair programming exercise we will follow few principles: 
@@ -14,6 +18,5 @@ the time code tends to become more chaotic, atleast for our little pair programm
 we should not have any broken code on github. Simple rule: Only push code without any errros, 
 any warnings on the github repository.
 
-Gitter chat window:
-https://gitter.im/shubh29/InformationRetrievalSystem2
+
 
