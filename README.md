@@ -14,3 +14,7 @@ any warnings on the github repository.
 
 Gitter chat window:
 https://gitter.im/shubh29/InformationRetrievalSystem2
+
+Gitter
+
+Join the chat at https://gitter.im/jstriebel/badges
