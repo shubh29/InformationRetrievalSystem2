@@ -24,25 +24,24 @@ stopwords = nltk.corpus.stopwords.words('english')
 
 documentTerms = {}
 
-
 length = {}
 
-# define empty scores
 scores = {}
 
-# define empty postingslists
 postingsList = {}
 
 
-# Read all .txt files in the current working directory
-for file in os.listdir(os.getcwd()):
-    if file.endswith(".txt"):
-        fileOpen = open(file,'r')
-        fileRead = fileOpen.read()
-        # Get all tokens in the document
-        documentTerms[file] = [w.lower() for w in nltk.word_tokenize(fileRead) if w.lower() not in stopwords and re.compile(r'^[a-z]+$').search(w.lower()) is not None]
-        # Get # of terms in a document
-        length[file] = len(set([w.lower() for w in nltk.word_tokenize(fileRead) if w.lower() not in stopwords and re.compile(r'^[a-z]+$').search(w.lower()) is not None]))
+################################## Methods ####################################
+
+def collectVocab():
+    for file in os.listdir(os.getcwd()):
+         if file.endswith(".txt"):
+              fileOpen = open(file,'r')
+              fileRead = fileOpen.read()
+              documentTerms[file] = [w.lower() for w in nltk.word_tokenize(fileRead) if w.lower() not in stopwords and re.compile(r'^[a-z]+$').search(w.lower()) is not None]
+              # Get # of terms in a document
+              length[file] = len(set([w.lower() for w in nltk.word_tokenize(fileRead) if w.lower() not in stopwords and re.compile(r'^[a-z]+$').search(w.lower()) is not None]))
+collectVocab()
 
 # Get query and break it into terms
 inputQuery = input('Please enter the Query: ')
@@ -53,8 +52,6 @@ def postingListOperation():
     for term in queryTerms:
         postingsList[term] = {}
 postingListOperation()        
-
-	
 
 # Get postings (doc, tf)
 for term in queryTerms:
@@ -83,9 +80,7 @@ computeTermFrequency()
 for d in length:
 	scores[d] = scores[d]/length[d]
 
-#print(scores)
-
-# Documents sorted by weight
+# Generate the output of documents based on terms occurance
 def generateOutput():
     documentSortedInOrder = OrderedDict(sorted(scores.items(), key=operator.itemgetter(1), reverse=True))
     print("Matching Documents:")
